@@ -27,9 +27,11 @@ def password():
         return Response(response="hash ou key invalido", status=500)
     pyperclip.copy(decMessage)
     print("Copiado!")
-    time.sleep(10)
+    time.sleep(3)
     pyperclip.copy('')
     os.system('xsel -bc')
     os.system('xclip -sel clip < /dev/null')    
     return Response(response="sucesso!", status=200)
-app.run(host="0.0.0.0", port=8080)
+app.run(host="127.0.0.1", port=8080)
+
+v

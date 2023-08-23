@@ -4,6 +4,7 @@ import os
 import time
 import cryptography
 import pyperclip
+import json
 keykey = Fernet.generate_key()
 print(keykey.decode())
 
@@ -27,6 +28,18 @@ encMessage = fernet.encrypt(message.encode())
 
 print(fkey.encrypt(key))
 print("encrypted string: ", encMessage)
+with open('pass.json', 'r') as update:
+    json_string = update.read()
+
+json_obj = json.loads(json_string)
+
+json_obj['key'] = fkey.encrypt(key).decode()
+json_obj['hash'] = encMessage.decode()
+
+json_string_atualizado = json.dumps(json_obj, indent=4)
+
+with open('pass.json', 'w') as arquivo:
+    arquivo.write(json_string_atualizado)
 
 k = True
 while True:
