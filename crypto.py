@@ -26,8 +26,8 @@ fernet = Fernet(key)
 # be encoded to byte string before encryption
 encMessage = fernet.encrypt(message.encode())
 
-print(fkey.encrypt(key))
-print("encrypted string: ", encMessage)
+#print(fkey.encrypt(key))
+#print("encrypted string: ", encMessage)
 with open('pass.json', 'r') as update:
     json_string = update.read()
 
@@ -54,18 +54,18 @@ while True:
     except (cryptography.fernet.InvalidToken, TypeError):
         print("invalido")
         continue
-    if k == True:
-        print(decMessage)
-        time.sleep(3)
-        os.system('clear')
-        k = False
-    else:
-        pyperclip.copy(decMessage) 
-        print("Copiado!")
-        time.sleep(10)
-        pyperclip.copy('')
-        os.system('xsel -bc')
-        os.system('xclip -sel clip < /dev/null')
-        os.system('clear')
+ #   if k == True:
+ #       print(decMessage)
+ #       time.sleep(3)
+ #       os.system('clear')
+ #       k = False
+ #   else:
+    pyperclip.copy(decMessage) 
+    print("Copiado!")
+    time.sleep(10)
+    pyperclip.copy('')
+    os.system('xsel -bc')
+    os.system('xclip -sel clip < /dev/null')
+    os.system('clear')
 
 
