@@ -3,7 +3,6 @@ from getpass import getpass
 import os
 import time
 import cryptography
-import pyperclip
 import json
 keykey = Fernet.generate_key()
 print(keykey.decode())
@@ -54,18 +53,6 @@ while True:
     except (cryptography.fernet.InvalidToken, TypeError):
         print("invalido")
         continue
- #   if k == True:
- #       print(decMessage)
- #       time.sleep(3)
- #       os.system('clear')
- #       k = False
- #   else:
-    pyperclip.copy(decMessage) 
-    print("Copiado!")
-    time.sleep(10)
-    pyperclip.copy('')
-    os.system('xsel -bc')
-    os.system('xclip -sel clip < /dev/null')
-    os.system('clear')
+
 
 

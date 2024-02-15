@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, Response
 from cryptography.fernet import Fernet
 from getpass import getpass
-import pyperclip
 import os
 import time
 
