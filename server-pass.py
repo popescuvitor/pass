@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, Response
-from fernet import Fernet
+from cryptography.fernet import Fernet
 from getpass import getpass
 import os
 import time
@@ -24,8 +24,10 @@ def password():
     except (cryptography.fernet.InvalidToken, TypeError):
         print("invalido")
         return Response(response="hash ou key invalido", status=500)
-    #pyperclip.copy(decMessage)
-    print("Copiado!")  
-    return Response(response=decMessage, status=200)
+    pyperclip.copy(decMessage)
+    print("Copiado!")
+    time.sleep(3)
+    return Response(response="sucesso!", status=200)
 app.run(host="127.0.0.1", port=8080)
 
+v
