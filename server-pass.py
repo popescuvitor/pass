@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, Response
-from cryptography.fernet import Fernet
+from fernet import Fernet
 from getpass import getpass
 import os
 import time

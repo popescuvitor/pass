@@ -1,4 +1,4 @@
-from cryptography.fernet import Fernet
+from fernet import Fernet
 from getpass import getpass
 import os
 import time
