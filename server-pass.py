@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, Response
 from cryptography.fernet import Fernet
 from getpass import getpass
+import pyperclip
 import os
 import time
 
@@ -27,6 +28,7 @@ def password():
     pyperclip.copy(decMessage)
     print("Copiado!")
     time.sleep(3)
+    pyperclip.copy('')
     return Response(response="sucesso!", status=200)
 app.run(host="127.0.0.1", port=8080)
 
